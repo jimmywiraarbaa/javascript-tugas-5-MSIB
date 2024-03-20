@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h3>Letakkan kurse ke masing-masing kotak untuk melihat gambar dan suara</h3>
+    <div id="bebek">
+        Bebek
+    </div>
+    <div id="kucing">
+        Kucing
+    </div>
+    <div id="ayam">
+        Ayam
+    </div>
+
+    <audio id="suaraKucing" src="suara/kucing.mp3"></audio>
+    <audio id="suaraAyam" src="suara/ayam.mp3"></audio>
+    <audio id="suaraBebek" src="suara/bebek.mp3"></audio>
+
+    <script>
+        $(document).ready(function () {
+            $("div").mouseout(function () {
+                $(this).css({
+                    background: "blueviolet"
+                });
+                document.getElementById('suaraBebek').pause();
+                document.getElementById('suaraKucing').pause();
+                document.getElementById('suaraAyam').pause();
+            });
+
+            $("#bebek").mouseover(function () {
+                $(this).css({
+                    background: "url('https://asset-2.tstatic.net/bali/foto/bank/images/9-arti-mimpi-bebek-pertanda-bahwa-anda-harus-mencoba.jpg')"
+                });
+                document.getElementById('suaraBebek').play();
+            });
+
+            $("#kucing").mouseover(function () {
+                $(this).css({
+                    background: "url('https://cdnwpseller.gramedia.net/wp-content/uploads/2022/11/kucing-ashera.jpg')"
+                });
+                document.getElementById('suaraKucing').play();
+            });
+
+            $("#ayam").mouseover(function () {
+                $(this).css({
+                    background: "url('https://img.lovepik.com/bg/20240121/Adorable-Chickens-Posed-Together-with-Beautiful-Background-A-Captivating-Sight_2783469_wh860.jpg!/fw/860')"
+                });
+                document.getElementById('suaraAyam').play();
+            });
+        });
+    </script>
+</body>
+
+</html>
